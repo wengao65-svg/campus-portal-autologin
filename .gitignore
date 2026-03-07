@@ -43,7 +43,7 @@ browsers/
 portable_build/
 get-pip.py
 build_portable.py
-⚡一键配置与安装*.bat
+⚡一键配置与安装*.py
 
 # ====== 系统文件 ======
 .DS_Store

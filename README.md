@@ -32,9 +32,9 @@
 
 1. 下载本项目完整压缩包
 2. 解压到任意目录
-3. 双击 **`⚡一键配置与安装(小白双击).bat`**
+3. 右键 **`⚡一键配置与安装(小白双击).py`** → "使用 Python 运行" 或双击
 4. 等待自动安装完成（约 2-3 分钟，需要网络）
-5. 再次双击运行即可自动连接网络
+5. 再次双击运行 `campus_auto_connect_browser.py` 或等待开机自动连接
 
 > ⚠️ 首次运行需要管理员权限，请点击"是"
 
@@ -46,6 +46,20 @@
 
 ## 📁 项目结构
 
+```
+mykit/
+├── src/
+│   └── campus_auto_connect_browser.py   # 核心脚本
+├── python_env/                          # 便携版 Python（小白版）
+├── browsers/                            # Playwright 浏览器目录
+├── config.json.template                 # 配置文件模板
+├── config.json                          # 用户配置文件（需手动创建）
+├── get-pip.py                           # pip 安装脚本
+├── install_task.py                      # 安装开机自启
+├── ⚡一键配置与安装(小白双击).py         # ⭐ 双击运行安装
+├── run_hidden.vbs                       # 静默运行脚本（自动生成）
+├── remove_task_scheduler.bat            # 卸载开机自启
+└── README.md                            # 本文件
 ```
 mykit/
 ├── src/
