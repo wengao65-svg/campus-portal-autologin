@@ -17,9 +17,9 @@
 
 如果你不想安装 Python 环境，可以下载 **Windows 可执行文件版本**，解压后直接运行即可！
 
-[![Download Standalone](https://img.shields.io/badge/download-standalone-latest-blue)](../../releases/latest)
+[![Download Standalone](https://img.shields.io/badge/download-standalone-latest-blue)](https://github.com/wengao65-svg/campus-portal-autologin/releases/latest)
 
-**下载地址**：[Releases 页面](../../releases/latest)
+**下载地址**：[Releases 页面](https://github.com/wengao65-svg/campus-portal-autologin/releases/latest)
 
 **快速使用**：
 1. 下载 `CampusPortalAutologin.zip`
