@@ -24,26 +24,48 @@
 
 ---
 
+## 🚀 快速开始（小白版 - 无需安装 Python）
+
+如果你是**普通用户，不想手动安装 Python**，推荐使用便携版：
+
+### 方法一：双击即用（推荐）
+
+1. 下载本项目完整压缩包
+2. 解压到任意目录
+3. 双击 **`⚡一键配置与安装(小白双击).bat`**
+4. 等待自动安装完成（约 2-3 分钟，需要网络）
+5. 再次双击运行即可自动连接网络
+
+> ⚠️ 首次运行需要管理员权限，请点击"是"
+
+### 方法二：开发者手动安装
+
+如果你熟悉 Python，想自定义安装，请参考下文"🛠️ 安装步骤"
+
+---
+
 ## 📁 项目结构
 
 ```
 mykit/
 ├── src/
 │   └── campus_auto_connect_browser.py   # 核心脚本
-├── tests/                               # 测试文件（如果有）
+├── python_env/                          # 便携版 Python（小白版）
+├── browsers/                            # Playwright 浏览器目录
 ├── config.json.template                 # 配置文件模板
 ├── config.json                          # 用户配置文件（需手动创建）
-├── requirements.txt                     # 依赖清单
-├── install_task.py                      # 一键安装开机自启（Python 版本）
+├── get-pip.py                           # pip 安装脚本
+├── install_task.py                      # 安装开机自启
+├── ⚡一键配置与安装(小白双击).bat         # 小白版一键配置
 ├── run_hidden.vbs                       # 静默运行脚本（自动生成）
-├── remove_task_scheduler.bat            # 一键卸载开机自启
-├── .gitignore                           # Git 忽略配置
+├── remove_task_scheduler.bat            # 卸载开机自启
+├── build_portable.py                    # 构建便携版脚本（开发者用）
 └── README.md                            # 本文件
 ```
 
 ---
 
-## 🛠️ 安装步骤
+## 🛠️ 安装步骤（开发者版）
 
 ### 1. 安装 Python
 
@@ -56,17 +78,10 @@ mykit/
 打开命令行终端，进入项目目录，执行以下命令：
 
 ```bash
-# 安装 Playwright
 pip install playwright==1.40.0
 
-# 设置国内镜像（可选，加速下载）
-# PowerShell:
-$env:PLAYWRIGHT_DOWNLOAD_HOST="https://npmmirror.com/mirrors/playwright/"
-
-# CMD:
+# 安装 Chromium 浏览器（可选，使用国内镜像加速）
 set PLAYWRIGHT_DOWNLOAD_HOST=https://npmmirror.com/mirrors/playwright/
-
-# 安装 Chromium 浏览器
 playwright install chromium
 ```
 

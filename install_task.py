@@ -2,6 +2,8 @@ import os
 import sys
 import subprocess
 import ctypes
+import argparse
+
 
 def is_admin():
     """检查当前是否拥有管理员权限"""
@@ -11,6 +13,10 @@ def is_admin():
         return False
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--portable', type=str, help='便携Python路径')
+    args = parser.parse_args()
+    
     # 1. 自动请求管理员权限
     if not is_admin():
         print("正在请求管理员权限，请在弹出的窗口中点击“是”...")
@@ -27,8 +33,10 @@ def main():
     script_path = os.path.join(base_dir, "src", "campus_auto_connect_browser.py")
     vbs_path = os.path.join(base_dir, "run_hidden.vbs")
     
-    # 完美获取当前 Conda (base) 环境的 Python 解释器路径！
-    python_exe = sys.executable  
+    if args.portable and os.path.exists(args.portable):
+        python_exe = args.portable
+    else:
+        python_exe = sys.executable
 
     if not os.path.exists(script_path):
         print(f"[错误] 找不到核心脚本: {script_path}")

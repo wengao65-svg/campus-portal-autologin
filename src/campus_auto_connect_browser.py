@@ -10,6 +10,8 @@ import sys
 import time
 from datetime import datetime
 
+os.environ["PLAYWRIGHT_BROWSERS_PATH"] = os.path.join(os.path.dirname(__file__), '..', 'browsers')
+
 try:
     from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 except ImportError:
