@@ -43,6 +43,7 @@ browsers/
 portable_build/
 get-pip.py
 build_portable.py
+setup_portable.py
 setup.bat
 
 # ====== 系统文件 ======
