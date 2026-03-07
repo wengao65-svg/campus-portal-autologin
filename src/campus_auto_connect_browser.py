@@ -17,7 +17,23 @@ except ImportError:
     sys.exit(1)
 
 # 获取当前脚本所在目录的上级目录 (即 mykit 根目录)
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+# PyInstaller 打包后，使用 sys.executable 获取可执行文件路径
+if getattr(sys, 'frozen', False):
+    # 运行在打包后的可执行文件中
+    try:
+        # PyInstaller 3.x+ onefile 模式
+        BASE_DIR = sys._MEIPASS
+    except AttributeError:
+        try:
+            # PyInstaller 4.x+ onefile 模式
+            BASE_DIR = sys._MEI_PASS
+        except AttributeError:
+            # Fallback: 使用可执行文件所在目录
+            BASE_DIR = os.path.dirname(sys.executable)
+else:
+    # 正常 Python 运行
+    BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+
 LOG_PATH = os.path.join(BASE_DIR, 'campus_connect.log')
 
 logging.basicConfig(

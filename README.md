@@ -10,6 +10,28 @@
 
 通过 **Windows 任务计划程序**，可实现开机后台静默自动运行，无需手动干预。
 
+
+---
+
+## ⬇️ 下载开箱即用版本
+
+如果你不想安装 Python 环境，可以下载 **Windows 可执行文件版本**，解压后直接运行即可！
+
+[![Download Standalone](https://img.shields.io/badge/download-standalone-latest-blue)](../../releases/latest)
+
+**下载地址**：[Releases 页面](../../releases/latest)
+
+**快速使用**：
+1. 下载 `CampusPortalAutologin.zip`
+2. 解压到任意目录
+3. 从 `config.json.template` 创建 `config.json` 并填入你的信息
+4. 双击运行 `CampusPortalAutologin.exe`
+
+详细说明请查看压缩包内的 `README_STANDALONE.md`。
+
+---
+
+
 ---
 
 ## ✨ 特性
