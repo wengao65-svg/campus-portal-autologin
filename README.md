@@ -24,12 +24,15 @@
 
 如果你是普通用户，不想手动安装 Python，使用便携版：
 
+### 📥 下载便携版
+
+**[下载 mykit-portable-v1.0.0.zip (11MB)](../../releases/download/v1.0.0/mykit-portable-v1.0.0.zip)**
+
 ### 步骤 1：解压并配置
 
-1. 下载本项目压缩包
-2. 解压到任意目录（不要包含中文路径）
-3. 复制 `config.json.template` 并重命名为 `config.json`
-4. 使用文本编辑器打开 `config.json`，填写以下信息：
+1. 解压下载的压缩包到任意目录（不要包含中文路径）
+2. 复制 `config.json.template` 并重命名为 `config.json`
+3. 使用文本编辑器打开 `config.json`，填写以下信息：
 
 ```json
 {
@@ -59,16 +62,35 @@
 
 1. 安装 pip 包管理器
 2. 安装 Playwright 依赖
-3. 下载 Chromium 浏览器内核（约 100MB）
+3. 下载 Chromium 浏览器内核（约 100MB，首次运行）
 4. 配置开机自启任务
 
 > ⚠️ 首次运行会请求管理员权限，请点击「是」
 
-### 步骤 3：验证
+### 步骤 3：完成
 
 - 开机后会自动连接校园网
 - 查看日志文件 `campus_connect.log` 确认运行状态
 - 如需手动测试：`python_env\python.exe src\campus_auto_connect_browser.py`
+
+---
+
+## 📋 关于便携版
+
+便携版已包含 **Python 3.11.9**，无需安装系统级 Python。
+
+**文件大小**: 11MB（解压后约 25MB）
+
+**包含内容**:
+- 便携版 Python 环境
+- 所有配置脚本
+- 核心运行脚本
+
+**首次运行**:
+- 会自动下载 Chromium 浏览器内核（约 100MB）
+- 需要网络连接
+
+详细发布说明请查看 [Releases](../../releases)
 
 ---
 
@@ -101,20 +123,34 @@ playwright install chromium
 
 ## 📁 项目结构
 
+**源码仓库**（开发用）:
 ```
 mykit/
 ├── src/
 │   └── campus_auto_connect_browser.py   # 核心脚本
-├── python_env/                          # 便携版 Python（小白版）
-├── browsers/                            # 浏览器内核目录
 ├── config.json.template                 # 配置文件模板
-├── config.json                          # 用户配置文件（需创建）
 ├── setup_portable.py                    # 配置脚本
-├── setup.bat                           # 双击运行配置（推荐）
+├── install_task.py                      # 开机自启配置
+├── remove_task_scheduler.bat            # 卸载开机自启
+├── build_portable.py                    # 构建便携版（开发者用）
+└── README.guide.md                       # 使用文档
+```
+
+**便携版包**（[从 Releases 下载](../../releases)）:
+```
+mykit/
+├── src/
+│   └── campus_auto_connect_browser.py   # 核心脚本
+├── python_env/                          # 便携版 Python 3.11.9
+├── browsers/                            # 浏览器内核（运行时下载）
+├── config.json.template                 # 配置文件模板
+├── config.json                          # 用户配置（需手动创建）
+├── setup_portable.py                    # 配置脚本
+├── setup.bat                           # 双击运行（推荐）
 ├── install_task.py                      # 开机自启配置
 ├── run_hidden.vbs                       # 静默运行脚本（自动生成）
 ├── remove_task_scheduler.bat            # 卸载开机自启
-└── README.md                            # 本文件
+└── README.guide.md                       # 使用文档
 ```
 
 ---
