@@ -26,7 +26,7 @@
 
 ### 📥 下载便携版
 
-**[下载 CampusPortalAutologin-v1.0.0.zip (10.7MB)](../../releases/download/v1.0.0/CampusPortalAutologin-v1.0.0.zip)**
+**[下载 CampusPortalAutologin-v1.0.0.zip (12.4MB)](../../releases/download/v1.0.0/CampusPortalAutologin-v1.0.0.zip)**
 
 ### 步骤 1：解压并配置
 
@@ -79,7 +79,7 @@
 
 便携版已包含 **Python 3.11.9**，无需安装系统级 Python。
 
-**文件大小**: 10.7MB（解压后约 25MB）
+**文件大小**: 12.4MB（解压后约 25MB）
 
 **包含内容**:
 - 便携版 Python 环境
