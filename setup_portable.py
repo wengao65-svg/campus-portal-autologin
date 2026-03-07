@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-便携版 Python 环境安装脚本
-双击运行此脚本即可完成环境配置（替代 .bat）
-"""
 
 import os
 import sys
