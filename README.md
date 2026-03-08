@@ -26,7 +26,7 @@
 
 ### 📥 下载便携版
 
-**[下载 CampusPortalAutologin-v1.0.0.zip (12.4MB)](../../releases/download/v1.0.0/CampusPortalAutologin-v1.0.0.zip)**
+**[下载 CampusPortalAutologin-v1.0.1.zip (12.4MB)](../../releases/download/v1.0.1/CampusPortalAutologin-v1.0.1.zip)**
 
 ### 步骤 1：解压并配置
 
