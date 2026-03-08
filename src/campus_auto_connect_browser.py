@@ -18,9 +18,9 @@ except ImportError:
     print("错误: 请先安装playwright：pip install playwright")
     sys.exit(1)
 
-# 获取当前脚本所在目录的上级目录 (即 mykit 根目录)
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
-LOG_PATH = os.path.join(BASE_DIR, 'campus_connect.log')
+    BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
+    LOG_PATH = os.path.join(BASE_DIR, 'campus_connect.log')
+    LOGS_DIR = BASE_DIR
 
 logging.basicConfig(
     level=logging.INFO,
@@ -87,8 +87,8 @@ def login_with_browser(config):
                     logger.info("✓ [状态检测] 页面上显示'可用状态'，设备已经在线，无需重复登录！")
                     return True
                 else:
-                    logger.warning("未找到登录按钮，也未找到成功标志。可能页面加载异常。")
-                    page.screenshot(path="debug_unknown_state.png")
+                     logger.warning("未找到登录按钮，也未找到成功标志。可能页面加载异常。")
+                    page.screenshot(path=os.path.join(BASE_DIR, "debug_unknown_state.png"))
                     return False
 
             logger.info("检测到未登录，开始填写表单...")
@@ -128,12 +128,12 @@ def login_with_browser(config):
                 return True
             except PlaywrightTimeoutError:
                 logger.error("点击登录后，未在预期时间内看到成功标志。可能是密码错误或欠费。")
-                page.screenshot(path="login_failed_screenshot.png")
+                page.screenshot(path=os.path.join(BASE_DIR, "login_failed_screenshot.png"))
                 return False
 
         except Exception as e:
             logger.error(f"浏览器操作执行异常: {e}")
-            page.screenshot(path="login_error_crash.png")
+            page.screenshot(path=os.path.join(BASE_DIR, "login_error_crash.png"))
             return False
         finally:
             browser.close()
